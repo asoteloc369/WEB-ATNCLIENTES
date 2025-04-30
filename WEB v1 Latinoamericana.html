@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Atención a Clientes - Funeraria</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body class="bg-light">
+<div class="container py-4">
+  <h2 class="text-center mb-4">Atención a Clientes - Registro Completo</h2>
+<div id="folioGenerado" class="text-center text-success fw-bold mb-3"></div>
+
+  <ul class="nav nav-tabs" id="modulosTabs" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="modulo1-tab" data-bs-toggle="tab" data-bs-target="#modulo1" type="button" role="tab">Módulo 1</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="modulo2-tab" data-bs-toggle="tab" data-bs-target="#modulo2" type="button" role="tab">Módulo 2</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="modulo3-tab" data-bs-toggle="tab" data-bs-target="#modulo3" type="button" role="tab">Módulo 3</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="modulo4-tab" data-bs-toggle="tab" data-bs-target="#modulo4" type="button" role="tab">Módulo 4</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="modulo5-tab" data-bs-toggle="tab" data-bs-target="#modulo5" type="button" role="tab">Módulo 5</button>
+  </li>
+</ul>
+<div class="tab-content border border-top-0 p-4 bg-white shadow-sm" id="modulosTabsContent">
+  <div class="tab-pane fade show active" id="modulo1" role="tabpanel">
+    <form class="needs-validation" novalidate>
+      <div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Fecha de Atención</label>
+    <input type="date" class="form-control" name="fechaAtencion" required>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Servicio</label>
+    <input type="text" class="form-control" name="tipoServicio" required>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Nombre del Finado</label>
+    <input type="text" class="form-control" name="nombreFinado" required>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Lugar de Defunción</label>
+    <input type="text" class="form-control" name="lugarDefuncion" required>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Fecha de Nacimiento</label>
+    <input type="date" class="form-control" name="fechaNacimiento">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Fecha de Fallecimiento</label>
+    <input type="date" class="form-control" name="fechaFallecimiento">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-2">
+    <label class="form-label">Edad</label>
+    <input type="number" class="form-control" name="edad">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Sexo</label>
+    <select class="form-select" name="sexo">
+      <option value="">Seleccione</option>
+      <option>Masculino</option>
+      <option>Femenino</option>
+    </select>
+  </div>
+</div>
+<hr class="my-4">
+<h6>Datos del Titular</h6>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Nombre del Titular</label>
+    <input type="text" class="form-control" name="nombreTitular">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Teléfono</label>
+    <input type="tel" class="form-control" name="telefono">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Parentesco</label>
+    <input type="text" class="form-control" name="parentesco">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Calle</label>
+    <input type="text" class="form-control" name="calle">
+  </div>
+  <div class="col-md-2">
+    <label class="form-label">Número</label>
+    <input type="text" class="form-control" name="numero">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Colonia</label>
+    <input type="text" class="form-control" name="colonia">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-2">
+    <label class="form-label">C.P.</label>
+    <input type="text" class="form-control" name="cp">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Ciudad</label>
+    <input type="text" class="form-control" name="ciudad">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Estado</label>
+    <input type="text" class="form-control" name="estado">
+  </div>
+</div>
+    </form>
+  </div>
+  <div class="tab-pane fade" id="modulo2" role="tabpanel">
+    <form class="needs-validation" novalidate>
+      <div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Contrato PABS</label>
+    <input type="text" class="form-control" name="contratoPABS">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Costo del Plan</label>
+    <input type="number" class="form-control" name="costoPlan">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Abono</label>
+    <input type="number" class="form-control" name="abono">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Saldo Contrato</label>
+    <input type="number" class="form-control" name="saldoContrato" readonly>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Certificado Gratuito</label>
+    <select class="form-select" name="certificadoGratuito">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">¿Servicio NI?</label>
+    <select class="form-select" name="servicioNI">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Monto NI</label>
+    <input type="number" class="form-control" name="montoNI">
+  </div>
+</div>
+    </form>
+  </div>
+  <div class="tab-pane fade" id="modulo3" role="tabpanel">
+    <form class="needs-validation" novalidate>
+      <div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Fecha de Velación</label>
+    <input type="date" class="form-control" name="fechaVelacion">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Velación en</label>
+    <select class="form-select" name="velacionEn">
+      <option>CAPILLA</option>
+      <option>DOMICILIO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Horario de Velación</label>
+    <input type="text" class="form-control" name="horarioVelacion">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-6">
+    <label class="form-label">Capilla</label>
+    <select class="form-select" name="capilla">
+      <option>MEMORIAL</option>
+      <option>DEL CONSUELO</option>
+      <option>SAN JOSE</option>
+      <option>RESURRECCIÓN</option>
+      <option>SANTO CRISTO</option>
+      <option>EN DOMICILIO</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Domicilio de Velación (si aplica)</label>
+    <input type="text" class="form-control" name="domicilioVelacion">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Video Memorial</label>
+    <select class="form-select" name="videoMemorial">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Cafetería</label>
+    <select class="form-select" name="tipoCafeteria">
+      <option>BÁSICA</option>
+      <option>PREMIUM</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Ataúd</label>
+    <select class="form-select" name="tipoAtaud">
+      <option>METÁLICO</option>
+      <option>MADERA BÁSICO</option>
+      <option>PRESENTACIÓN</option>
+    </select>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-3">
+    <label class="form-label">Número de Esquelas</label>
+    <input type="number" class="form-control" name="esquelas">
+  </div>
+</div>
+    </form>
+  </div>
+  <div class="tab-pane fade" id="modulo4" role="tabpanel">
+    <form class="needs-validation" novalidate>
+      <div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">¿Cremación?</label>
+    <select class="form-select" name="cremacion">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-8">
+    <label class="form-label">Destino de las Cenizas</label>
+    <input type="text" class="form-control" name="cenizasDestino">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Urna</label>
+    <input type="text" class="form-control" name="tipoUrna">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">¿Inhumación?</label>
+    <select class="form-select" name="inhumacion">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Cementerio</label>
+    <select class="form-select" name="tipoCementerio">
+      <option>PANTEÓN MUNICIPAL</option>
+      <option>PANTEÓN PRIVADO</option>
+      <option>PANTEÓN EJIDAL</option>
+    </select>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">¿Con Salubridad?</label>
+    <select class="form-select" name="salubridad">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Día Hábil/Inhábil para Trámites</label>
+    <input type="text" class="form-control" name="diaTramites">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Hora de Sepultura</label>
+    <input type="text" class="form-control" name="horaSepultura">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-6">
+    <label class="form-label">¿Traslado?</label>
+    <select class="form-select" name="traslado">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label class="form-label">Destino del Traslado</label>
+    <input type="text" class="form-control" name="destinoTraslado">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <label class="form-label">Causas de Defunción</label>
+    <textarea class="form-control" rows="3" name="causasDefuncion"></textarea>
+  </div>
+</div>
+    </form>
+  </div>
+  <div class="tab-pane fade" id="modulo5" role="tabpanel">
+    <form class="needs-validation" novalidate>
+      <div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">¿Floristería?</label>
+    <input type="text" class="form-control" name="floreria">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Arreglo</label>
+    <input type="text" class="form-control" name="tipoArreglo">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Color de Rosas</label>
+    <input type="text" class="form-control" name="colorRosas">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <label class="form-label">Texto del Arreglo</label>
+    <input type="text" class="form-control" name="textoArreglo">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">¿Escolta?</label>
+    <select class="form-select" name="escolta">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">¿Tiene Misa?</label>
+    <select class="form-select" name="misa">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Iglesia</label>
+    <input type="text" class="form-control" name="iglesia">
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-6">
+    <label class="form-label">Domicilio de la Iglesia</label>
+    <input type="text" class="form-control" name="domicilioIglesia">
+  </div>
+  <div class="col-md-3">
+    <label class="form-label">Hora de Misa</label>
+    <input type="text" class="form-control" name="horaMisa">
+  </div>
+</div>
+<hr>
+<h6>Otros Servicios</h6>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">¿Embalsamado?</label>
+    <select class="form-select" name="embalsamado">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Tipo de Embalsamado</label>
+    <input type="text" class="form-control" name="tipoEmbalsamado">
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">¿Amortajado?</label>
+    <select class="form-select" name="amortajado">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+</div>
+<div class="row mb-3">
+  <div class="col-md-12">
+    <label class="form-label">Arreglo Estético (descripción)</label>
+    <textarea class="form-control" rows="2" name="arregloEstetico"></textarea>
+  </div>
+</div>
+<hr>
+<h6>Facturación</h6>
+<div class="row mb-3">
+  <div class="col-md-4">
+    <label class="form-label">¿Requiere Factura?</label>
+    <select class="form-select" name="requiereFactura">
+      <option>SI</option>
+      <option>NO</option>
+    </select>
+  </div>
+  <div class="col-md-8">
+    <label class="form-label">RFC</label>
+    <input type="text" class="form-control" name="rfc">
+  </div>
+</div>
+    </form>
+  </div>
+</div>
+
+  <div id="folioGenerado" class="text-center text-success fw-bold my-3"></div>
+  <div class="text-center mt-4">
+    <button class="btn btn-secondary me-2" onclick="guardarAtencion()">Guardar Atención</button>
+    <button class="btn btn-success me-2" onclick="exportarExcel()">Exportar a Excel</button>
+    <button class="btn btn-primary me-2" onclick="window.print()">Imprimir Ficha Técnica</button>
+    <button class="btn btn-danger" onclick="exportarPDF()">Exportar a PDF</button>
+  </div>
+</div>
+
+<script>
+let baseDatos = [];
+let contadorFolio = 1;
+
+function guardarAtencion() {
+  const inputs = document.querySelectorAll('form input, form select, form textarea');
+  const fila = {};
+  inputs.forEach(input => {
+    if (input.name) fila[input.name] = input.value;
+  });
+
+  // Asignar folio único
+  const folio = `S-${String(contadorFolio).padStart(5, '0')}`;
+  fila['folio'] = folio;
+  contadorFolio++;
+
+  baseDatos.push(fila);
+  document.getElementById('folioGenerado').innerText = `Atención guardada con folio: ${folio}`;
+
+  // Limpiar campos
+  inputs.forEach(input => {
+    if (input.tagName === 'SELECT') {
+      input.selectedIndex = 0;
+    } else if (input.type !== 'button' && input.type !== 'submit' && input.type !== 'hidden') {
+      input.value = '';
+    }
+  });
+}
+
+function exportarExcel() {
+  const workbook = XLSX.utils.book_new();
+  const worksheet = XLSX.utils.json_to_sheet(baseDatos);
+  XLSX.utils.book_append_sheet(workbook, worksheet, 'Atenciones');
+  XLSX.writeFile(workbook, 'base_datos_atenciones.xlsx');
+}
+
+function exportarPDF() {
+  const doc = new window.jspdf.jsPDF();
+  let y = 10;
+  baseDatos.forEach((fila, index) => {
+    doc.setFontSize(12);
+    doc.text(`Atención ${index + 1}`, 10, y);
+    y += 8;
+    for (const key in fila) {
+      if (fila[key]) {
+        doc.text(`${key}: ${fila[key]}`, 10, y);
+        y += 7;
+        if (y > 270) {
+          doc.addPage();
+          y = 10;
+        }
+      }
+    }
+    y += 5;
+  });
+  doc.save("atencion_clientes_funeraria.pdf");
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  // Reparación para compatibilidad con jsPDF (versión UMD)
+  window.jspdf = window.jspdf || {};
+  if (!window.jspdf.jsPDF && window.jspdf.default) {
+    window.jspdf.jsPDF = window.jspdf.default;
+  }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
